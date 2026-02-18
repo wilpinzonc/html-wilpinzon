@@ -5,7 +5,7 @@
 Hola! Este es mi repositorio donde realice una web informativa sobre el ecosistema actual de consolas portátiles, desarrollada con arquitectura semántica y css.
 
 
-🔗 **[VER LA WEB AQUÍ](https://wilpinzon.github.io/html-wilpinzon)**
+🔗 **[VER LA WEB AQUÍ](https://wilpinzonc.github.io/html-wilpinzon/)**
 
 
 * **Temas dinámicos:** Cada sección cambia de color según la consola (Rojo para Nintendo, Azul para PS5, Oscuro para ROG Ally, etc.) usando clases en el `body`.
