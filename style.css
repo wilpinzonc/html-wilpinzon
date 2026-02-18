@@ -90,7 +90,6 @@ img {
     transition: color 0.4s;       /* efectito suave de color */
     
 }
-
 .menu-principal > li:hover > a {
     color: white;                 /* blanco al pasar el ratón */
     border-bottom: 2px solid cyan; /* rayita cian abajo */
@@ -422,11 +421,7 @@ body.tema-nintendo .destacado {
     box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Sombra elegante */
     border-radius: 15px;
 }
-.card-nintendo{
-    background: radial-gradient(circle at top left, rgba(0, 217, 255, 0.12) 0, #050814 100%);
-    padding: 1.2rem 1.3rem;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
+
 .seccion-rejilla-3-nintendo {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -461,6 +456,9 @@ body.tema-nintendo .destacado {
 }
 .texto-centrado {
     text-align: center;
+}
+.texto-derecha {
+    text-align: right;
 }
 
 /*==========TEM PAL PS5 SIUUUUUU============================*/
@@ -907,3 +905,34 @@ gracias por tu tiempo y espero que te guste el trabajo, saludos.
     }
 }
 
+/*==================================================
+/*========ZONA DE PRUEBA PARA COLOR RAINBOW======*/
+/*==================================================*/
+
+/* con este condigo puedo poner un texto en rainbow animado
+pense ponerlo en el menu del index pero siento que distrae mucho
+*/
+.rainbow-anim {
+  font-size: 50px;
+  font-weight: bold;
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet,
+    red
+  );
+  background-size: 400%;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: rgb 5s linear infinite;
+}
+
+@keyframes rgb {
+  0% { background-position: 0%; }
+  100% { background-position: 400%; }
+}
