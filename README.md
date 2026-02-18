@@ -1,5 +1,7 @@
 🌐 **Proyecto académico (ASIR 2026)**. 
 
+🚧 SITIO AUN EN CONSTRUCCION 🚧 
+
 Hola! Este es mi repositorio donde realice una web informativa sobre el ecosistema actual de consolas portátiles, desarrollada con arquitectura semántica y css.
 
 
