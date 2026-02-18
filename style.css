@@ -1,0 +1,908 @@
+/* --------------PROYECTO WILSON PINZON -------------------------------------------------------------*/
+/*================== acomodare por orden y al final pondre los temas de cada pagina============*/
+/* reglas generales (reset) */
+* {
+    box-sizing: border-box; /* para que el padding no sume al ancho total */
+    margin: 0;              /* quita los márgenes por defecto */
+    padding: 0;             /* quita los rellenos por defecto */
+}
+
+html {
+    scroll-behavior: smooth; /* scroll suave al hacer clic */
+}
+
+/* body */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* letra pal sistema */
+    /* fondo degradado: azul oscuro arriba a negro abajo */
+    background: radial-gradient(circle at top, midnightblue 0%, black 55%, black 100%);
+    color: aliceblue;      /* color base del texto (blanco azulado) */
+    line-height: 1.5;      /* altura de línea */
+    min-height: 100vh;     /* para que ocupe toda la altura */
+}
+
+/* enlaces e imágenes */
+a {
+    text-decoration: none; /* quita el subrayado feo */
+    color: inherit;        /* hereda el color del padre */
+}
+
+ul {
+    list-style: none;      /* quita los puntos de la lista */
+}
+
+img {
+    max-width: 100%;       /* la imagen no se sale de su caja */
+    display: block;        /* quita el espacio blanco de abajo */
+    height: auto;          /* mantiene la proporción */
+    border-radius: 10px;   /* bordes redonditos */
+}
+
+/* layout (estructura principal) */
+/* esta clase la uso en el main y el footer */
+.contenedor {
+    max-width: 1200px;     /* ancho máximo */
+    margin: 0 auto;        /* centra el bloque */
+    padding: 0 24px;       /* espacio a los lados */
+}
+
+/* cabecera (header) */
+.cabecera-sitio {
+    background-color: black;      /* fondo negro */
+    border-bottom: 1px solid white; /* línea blanca abajo */
+    position: sticky;             /* se pega al techo al bajar */
+    top: 0;                       /* posición arriba */
+    z-index: 1000;                /* siempre encima de todo */
+}
+
+.cabecera-interior {
+    /* repetimos reglas para alinear con el contenedor */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    
+    display: flex;                /* pone cosas en fila */
+    align-items: center;          /* centra verticalmente */
+    justify-content: space-between; /* separa logo y menú */
+}
+
+.logotipo {
+    font-weight: 800;             /* letra bien gruesa */
+    font-size: 20px;              
+    text-transform: uppercase;    /* mayúsculas */
+}
+
+.logotipo span {
+    color: cyan;                  /* color cian para que se vean dos colores y simular el logo*/
+}
+
+/* menú de navegación */
+.menu-principal {
+    display: flex;                /* elementos en fila */
+    gap: 24px;                    /* separación entre enlaces */
+    color : rgb(178, 222, 176);        /* color gris azulado */
+}
+
+.menu-principal > li > a {
+    color: rgb(79, 134, 207);        /* pa las letras del menu color gris azulado */
+    font-size: 20px;              
+    padding: 8px;                 /* zona de clic */
+    transition: color 0.4s;       /* efectito suave de color */
+    
+}
+
+.menu-principal > li:hover > a {
+    color: white;                 /* blanco al pasar el ratón */
+    border-bottom: 2px solid cyan; /* rayita cian abajo */
+}
+
+/* submenús (desplegables) */
+.tiene-submenu {
+    position: relative;           /* referencia para el hijo */
+}
+
+.sub-menu {
+    position: absolute;           /* flota sobre el contenido */
+    top: 100%;                    /* justo debajo */
+    left: 0;                      
+    min-width: 200px;             
+    background-color: midnightblue; /* fondo azul oscuro */
+    border: 1px solid white;      /* borde blanco */
+    border-radius: 8px;           
+    padding: 8px;                 
+    display: none;                /* oculto por defecto */
+}
+
+/* mostrar submenú al pasar el ratón */
+.tiene-submenu:hover .sub-menu {
+    display: block;               /* aparece al hacer hover */
+}
+
+.sub-menu li a {
+    display: block;               /* ocupa todo el ancho */
+    padding: 10px;                
+    color: lightsteelblue;        
+    font-size: 16px;              
+}
+
+.sub-menu li a:hover {
+    background-color: cyan;       /* fondo cian */
+    color: black;                 /* texto negro para leer bien */
+    border-radius: 4px;           
+}
+
+/* sección destacado (hero) */
+.destacado {
+    display: flex;                /* lado a lado */
+    align-items: center;          /* centrado vertical */
+    gap: 48px;                    
+    margin-top: 64px;             
+    margin-bottom: 80px;          
+}
+.destacado > div:first-child {
+    flex: 1;                      /* ocupa el espacio que sobre */
+}
+
+.entrada-pagina {
+    color: deeppink;              /* color rosa */
+    text-transform: uppercase;    
+    font-weight: bold;            
+    font-size: 14px;              
+    margin-bottom: 16px;          
+}
+
+.titulo-pagina {
+    font-size: 56px;              /* título grande */
+    line-height: 1.1;             
+    margin-bottom: 24px;          
+    color: white;                 
+}
+
+.subtitulo-pagina {
+    font-size: 18px;              
+    color: lightsteelblue;        
+    max-width: 600px;             /* para que no sea muy ancho */
+}
+
+/* tarjeta de bienvenida (derecha) */
+.tarjeta {
+    flex: 0 0 350px;              /* ancho fijo, no cambia */
+    background-color: rgba(25, 25, 112, 0.5); /* azul transparente */
+    padding: 32px;                
+    border-radius: 12px;          
+    border: 1px solid cyan;       
+}
+
+.insignia { /*el botoncito bonito que rodea el NUEVO!*/
+    background-color: cyan;       
+    color: black;                 
+    padding: 4px 10px;            
+    border-radius: 4px;           
+    font-size: 12px;              
+    font-weight: bold;            
+    text-transform: uppercase;    
+    display: inline-block;        
+    margin-bottom: 16px;          
+}
+
+.tarjeta h3 {
+    margin-bottom: 16px;          
+    color: white;                 
+}
+
+/* sección del slider */
+.slider-section {
+    padding-bottom: 64px;         
+    text-align: center;           /* todo centrado */
+}
+
+.section-title {
+    font-size: 40px;              
+    color: white;                 
+    margin-bottom: 16px;          
+}
+
+.subtitulo-seccion {
+    color: lightsteelblue;        
+    margin-bottom: 48px;          
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* armamos el carrusel (contenedor principal) */
+.carrusel {
+    position: relative;
+    width: 100%;
+    /* esta es la clave: oculta lo que se salga de la caja */
+    overflow: hidden; 
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: #0a0a0a;
+    /* sombra para darle profundidad */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* la tira de imagenes que se va moviendo en el carrusel, si le cambio la duracion cambia la speed */
+.diapositivas {
+    display: flex;        /* pone las fotos en fila */
+    width: 500%;          /* 5 fotos = 500% ancho */
+    height: 100%;         
+    /* animación automática: nombre, duración, infinita */
+    animation: autoSlide 10s infinite ease-in-out;
+}
+
+/* pausar al pasar el ratón para poder hacer clic */
+.carrusel:hover .diapositivas {
+    animation-play-state: paused;
+}
+
+/* cada diapositiva individual */
+.diapositiva {
+    width: 20%;           /* 100% entre 5 = 20% cada una */
+    display: flex;        /* imagen y texto lado a lado */
+    position: relative;   
+}
+
+/* estilos internos de cada diapositiva */
+.diapositiva-imagen {
+    width: 50%;                   /* mitad imagen */
+}
+
+.diapositiva-imagen img {
+    width: 100%;           /* ocupa todo el ancho */
+    height: 100%;          /* ocupa todo el alto */
+    object-fit: cover;     /* recorta la imagen para llenar sin deformar */
+    object-position: center; /* centra el recorte */
+    min-height: 400px;     /* altura mínima fija */
+    border-radius: 0;      /* sin bordes redondos aquí */
+}
+
+.diapositiva-contenido {
+    width: 50%;                   /* mitad contenido */
+    padding: 32px;                
+    text-align: left;             
+    display: flex;
+    flex-direction: column;
+    justify-content: center;      /* centrado vertical */
+}
+
+.etiqueta-diapositiva {
+    color: cyan;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.titulo-diapositiva {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.descripcion-diapositiva {
+    color: lightsteelblue;
+    margin-bottom: 20px;
+}
+
+.meta-diapositiva {
+    font-size: 13px;
+    color: rgb(161, 159, 159);
+    border-top: 1px solid rgb(89, 89, 89);
+    padding-top: 15px;
+}
+
+/* estilos para los enlaces del título */
+/* para que el link se vea blanco y cambie al pasar el ratón */
+.titulo-diapositiva a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.titulo-diapositiva a:hover {
+    color: cyan;
+    text-decoration: underline;
+}
+
+/* animación automática (keyframes) */
+@keyframes autoSlide {
+    0%, 15%   { transform: translateX(0); }       /* foto 1 */
+    20%, 35%  { transform: translateX(-20%); }    /* foto 2 */
+    40%, 55%  { transform: translateX(-40%); }    /* foto 3 */
+    60%, 75%  { transform: translateX(-60%); }    /* foto 4 */
+    80%, 95%  { transform: translateX(-80%); }    /* foto 5 */
+       /* vuelta al inicio */
+}
+
+/* =============pie de pagina================ no fue gpt, me gusta usar= para separar========= */
+.pie-sitio {
+    background-color: black;      
+    padding: 48px 0;              
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+    text-align: center;           
+    margin-top: auto;             /* empuja abajo */
+}
+
+.contenido-pie p {
+    color: lightsteelblue;        
+    font-size: 14px;              
+    margin-bottom: 16px;          
+}
+
+.enlaces-pie {
+    display: flex;                
+    justify-content: center;      
+    gap: 16px;                    
+    align-items: center;          
+}
+
+.enlaces-pie a {
+    color: cyan;                  
+    font-size: 14px;              
+}
+
+.enlaces-pie span {
+    color: white;
+}
+
+/*==================================== tema pa la pag de NINTENDOS============== */
+body.tema-nintendo {
+    background: white;      /* Fondo blanco limpio */
+    color: #333333;           /* Texto gris oscuro (casi negro) */
+}
+
+/* Cabecera Roja oficial de Nintendo */
+.tema-nintendo .cabecera-sitio {
+    background-color: #e60012; 
+    border-bottom: none;
+}
+
+/* Enlaces del menú en blanco para que se vean sobre el rojo */
+.tema-nintendo .menu-principal > li > a {
+    color: white;
+}
+.tema-nintendo .menu-principal > li:hover > a {
+    border-bottom: 2px solid white;
+}
+.tema-nintendo .logotipo { color: white; }
+.tema-nintendo .logotipo span { color: white; } /* Quita el cian */
+
+/* Tarjetas en estilo Nintendo (gris muy suave) */
+.tema-nintendo .tarjeta, 
+.tema-nintendo article {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 20px; /* Asegura relleno si usas article limpio */
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.tema-nintendo h1, .tema-nintendo h2, .tema-nintendo h3 {
+    color: #e60012; /* Títulos en rojo */
+}
+.tema-nintendo .insignia {
+    background-color: #060606;
+    color: white;
+}
+.imagen-descatada {
+    border-radius: 10px;
+    border: 1px solid #cd2f2f;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: 450px; /* altura fija para mantener consistencia */
+
+}
+
+/* =======AJUSTES EXTRAS PAL NINTENDO========================================= */
+/* Cambiamos el comportamiento del destacado solo en Nintendo */
+body.tema-nintendo .destacado {
+    display: block;       /* Quita el flex original para que el H1 suba */
+    text-align: center;   /* Centra el título */
+}
+/* La caja que contiene Texto + Imagen */
+.info-superior {
+    display: flex;        /* Pone texto e imagen lado a lado */
+    align-items: center;  /* Los centra verticalmente */
+    gap: 50px;            /* Separación entre texto e imagen */
+    margin-top: 40px;     /* Separación con el título de arriba */
+    text-align: left;     /* El texto vuelve a la izquierda */
+}
+/* Estilo del texto */
+.texto-introduccion {
+    flex: 1;              /* Ocupa todo el espacio disponible */
+    font-size: 18px;      /* Un poco más grande para leerse bien */
+    line-height: 1.8;     /* Más espacio entre líneas */
+}
+/* Estilo de la imagen (pa q se vea más pequeña) */
+.imagen-pequena {
+    flex: 0 0 400px;      /* Ancho fijo de 400px  */
+    width: 400px;         
+    height: auto;         /* Mantiene proporción */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Sombra elegante */
+    border-radius: 15px;
+}
+.card-nintendo{
+    background: radial-gradient(circle at top left, rgba(0, 217, 255, 0.12) 0, var(--bg-elevated) 40%, #050814 100%);
+    border-radius: var(--border-radius);
+    padding: 1.2rem 1.3rem;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.seccion-rejilla-3-nintendo {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+.seccion-rejilla-2-nintendo {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+} /*debo revisar porque no se pone en columna, pd ya revise era por culpa de un div*/
+.badge-nintendo-rejilla{
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    background-color: #BDD9DA;
+    color: black;
+}
+/*tuve que ajustar el footer porque heredo el color del tema y quedaba negro*/
+.tema-nintendo .pie-sitio {
+    background-color: #e60012; 
+    border-top: 4px solid white; /* Una línea blanca arriba para separar */
+}
+/* que todo texto sea blanco*/
+.tema-nintendo .contenido-pie p,
+.tema-nintendo .enlaces-pie a,
+.tema-nintendo .enlaces-pie span {
+    color: white;
+}
+.texto-centrado {
+    text-align: center;
+}
+
+/*==========TEM PAL PS5 SIUUUUUU============================*/
+
+/* Cambiamos el comportamiento del destacado solo en Ps5 */
+body.tema-ps5 .destacado {
+    display: block;       /* Quita el flex original para que el H1 suba */
+    text-align: center;   /* Centra el título */
+}
+/* La caja que contiene Texto + Imagen */
+.info-superior {
+    display: flex;        /* Pone texto e imagen lado a lado */
+    align-items: center;  /* Los centra verticalmente */
+    gap: 50px;            /* Separación entre texto e imagen */
+    margin-top: 40px;     /* Separación con el título de arriba */
+    text-align: left;     /* El texto vuelve a la izquierda */
+}
+/* Estilo del texto */
+.texto-introduccion {
+    flex: 1;              /* Ocupa todo el espacio disponible */
+    font-size: 18px;      /* Un poco más grande para leerse bien */
+    line-height: 1.8;     /* Más espacio entre líneas */
+}
+/* Estilo de la imagen (pa q se vea más pequeña) */
+.imagen-pequena {
+    flex: 0 0 400px;      /* Ancho fijo de 400px */
+    width: 400px;         
+    height: auto;         /* Mantiene proporción */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Sombra elegante */
+    border-radius: 15px;
+}
+.seccion-rejilla-2-ps5 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+} /*debo revisar porque no se pone en columna*/
+.badge-ps5-rejilla{
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    background-color: #BDD9DA;
+    color: black;
+}
+/*tuve que ajustar el footer porque heredo el color del tema y quedaba negro*/
+.tema-ps5 .pie-sitio {
+    background-color: #003791; 
+    border-top: 4px solid white; /* Una línea blanca arriba para separar */
+}
+/* que todo texto sea del piedepagina sea blanco*/
+.tema-ps5 .contenido-pie p,
+.tema-ps5 .enlaces-pie a,
+.tema-ps5 .enlaces-pie span {
+    color: rgb(246, 243, 243);
+}
+body.tema-ps5 {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at top, #003791 0%, #001a4d 40%, #000000 100%);
+    color: white;          /* Texto blanco */
+    min-height: 100vh;
+}
+/* ==================UTILIDADES GENERALES PARA SECCIONES Y REJILLAS (ROG Y R36S)=========== */
+.seccion {
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+.rejilla-2,
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+.encabezado-pagina {
+    margin-top: 64px;
+    margin-bottom: 48px;
+    text-align: center;
+}
+.encabezado-pagina .subtitulo-pagina {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.titulo-seccion {
+    font-size: 40px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+/* ==================TEMA ROG ALLY X==================================================== */
+body.tema-rog {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at top, #0b1020 0%, #020617 45%, #000000 100%);
+    color: #e5e7eb;
+    min-height: 100vh;
+}
+.tema-rog .cabecera-sitio {
+    background: linear-gradient(90deg, #020617, #111827, #020617);
+    border-bottom: 2px solid #f97316; /* naranja ROG */
+}
+.tema-rog .logotipo,
+.tema-rog .logotipo span {
+    color: #f9fafb;
+}
+.tema-rog .menu-principal > li > a {
+    color: #e5e7eb;
+}
+.tema-rog .menu-principal > li:hover > a {
+    color: #f97316;
+    border-bottom: 2px solid #f97316;
+}
+.tema-rog .tarjeta {
+    background: radial-gradient(circle at top left, rgba(239, 68, 68, 0.16) 0, #020617 45%, #020617 100%);
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    color: #e5e7eb;
+}
+.tema-rog .insignia {
+    background-color: #f97316;
+    color: #0b0f19;
+}
+.tema-rog .titulo-pagina {
+    color: #f9fafb;
+}
+.tema-rog .titulo-seccion {
+    color: #f97316;
+}
+.tema-rog .pie-sitio {
+    background-color: #020617;
+    border-top: 4px solid #f97316;
+}
+.tema-rog .contenido-pie p,
+.tema-rog .enlaces-pie a,
+.tema-rog .enlaces-pie span {
+    color: #e5e7eb;
+}
+
+/* ==================TEMA R36S RETRO===================================================== */
+body.tema-r36s {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at top, #022c22 0%, #020617 45%, #000000 100%);
+    color: #e5e7eb;
+    min-height: 100vh;
+}
+.tema-r36s .cabecera-sitio {
+    background-color: #022c22;
+    border-bottom: 2px solid #22c55e; /* verde retro */
+}
+.tema-r36s .logotipo,
+.tema-r36s .logotipo span {
+    color: #f9fafb;
+}
+.tema-r36s .menu-principal > li > a {
+    color: #bbf7d0;
+}
+.tema-r36s .menu-principal > li:hover > a {
+    color: #22c55e;
+    border-bottom: 2px solid #22c55e;
+}
+.tema-r36s .tarjeta {
+    background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.18) 0, #020617 45%, #020617 100%);
+    border: 1px solid rgba(74, 222, 128, 0.6);
+    color: #e5e7eb;
+}
+.tema-r36s .insignia {
+    background-color: #22c55e;
+    color: #022c22;
+}
+.tema-r36s .section-title,
+.tema-r36s .titulo-pagina {
+    color: #bbf7d0;
+}
+.tema-r36s .pie-sitio {
+    background-color: #020617;
+    border-top: 4px solid #22c55e;
+}
+.tema-r36s .contenido-pie p,
+.tema-r36s .enlaces-pie a,
+.tema-r36s .enlaces-pie span {
+    color: #e5e7eb;
+}
+/* ==================TEMA NEUTRAL (PÁGINAS DE TEXTO)=================================== */
+/*body.theme-neutral {
+     uso el mismo fondo general que el body normal para no marearme con más colores 
+}*/
+
+/* ==================CLASES ACTUALMENTE SIN USO (POR SI LAS NECESITO LUEGO)============== */
+/* .imagen-descatada (definida originalmente en la línea 389)
+.imagen-descatada {
+    border-radius: 10px;
+    border: 1px solid #cd2f2f;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: 450px; 
+}
+*/
+
+/* .badge-ps5-rejilla (definida originalmente en la línea 591)
+.badge-ps5-rejilla{
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    background-color: #BDD9DA;
+    color: black;
+}
+*/
+
+/* .card-ps5 (estaba comentada en la línea 579, la dejo aquí también comentada)
+se ve mejor con tarjeta que con este, lo dejo por si acaso
+.card-ps5{
+    background: radial-gradient(circle at top left, rgba(0, 217, 255, 0.12) 0, var(--bg-elevated) 40%, #050814 100%);
+    border-radius: var(--border-radius);
+    padding: 1.2rem 1.3rem;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+*/
+/* ==================EXTRAS PARA GUIAS Y CONTACTO======================== */
+/* navegacion simple entre las paginas de guias */
+.nav-guias {
+    display: inline-flex;
+    gap: 12px;
+    margin: 0 0 32px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background-color: rgba(15, 23, 42, 0.8);
+}
+
+.nav-guias a {
+    font-size: 14px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    color: lightsteelblue;
+}
+
+.nav-guias a:hover {
+    border-color: cyan;
+    color: white;
+}
+
+.nav-guias-activa {
+    background-color: cyan;
+    color: black !important;
+    border-color: cyan;
+}
+
+/* estilos basicos para el formulario de contacto */
+.contenedor-formulario {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px;
+    background-color: rgba(15, 23, 42, 0.85);
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+}
+
+.fila-formulario {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.grupo-formulario {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.grupo-formulario label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: lightsteelblue;
+}
+
+.grupo-formulario input,
+.grupo-formulario select,
+.grupo-formulario textarea {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background-color: #020617;
+    color: white;
+    font-size: 14px;
+}
+
+.grupo-formulario textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.grupo-formulario input:focus,
+.grupo-formulario select:focus,
+.grupo-formulario textarea:focus {
+    outline: none;
+    border-color: cyan;
+    box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.5);
+}
+
+.grupo-formulario-inline {
+    margin-bottom: 16px;
+}
+
+.etiqueta-formulario-inline {
+    font-size: 14px;
+    color: lightsteelblue;
+    margin-bottom: 6px;
+}
+
+.grupo-checkbox,
+.grupo-radio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.item-checkbox,
+.item-radio {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+}
+
+.acciones-formulario {
+    margin-top: 16px;
+    display: flex;
+    gap: 12px;
+}
+
+.boton {
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.boton-primario {
+    background-color: cyan;
+    color: black;
+}
+
+.boton-secundario {
+    background-color: transparent;
+    color: cyan;
+    border-color: cyan;
+}
+
+
+/* ========== EL MEDIAQUERY RESPONSIVE PAL MOVIL=================================== */
+@media (max-width: 768px) {       /* pantallas menores a 768px */
+
+    /* quite el sticky porque se veia feo en el movil*/
+    .cabecera-sitio {
+        position: relative;       
+        height: auto;             /* altura automática */
+    }
+    .cabecera-interior {
+        flex-direction: column;   /* pone el menú debajo del logo */
+        padding: 10px;
+        gap: 10px;
+    }
+    .menu-principal {
+        display: flex;            /* mostramos el menú */
+        flex-direction: column;   /* lista vertical */
+        width: 100%;              /* ocupa todo el ancho */
+        gap: 0;                   
+        margin-top: 10px;
+    }
+    .menu-principal > li {
+        width: 100%;              
+        text-align: center;       
+        border-top: 1px solid #333; /* línea separadora arriba de cada opción */
+    }
+    .menu-principal > li > a {
+        display: block;           
+        padding: 15px;            /* botones grandes para el dedo */
+    }
+    /* submenús en móvil: que no floten, que se queden fijos en la lista */
+    .sub-menu {
+        position: static;         /* quita el "flotar" */
+        width: 100%;
+        border: none;
+        background-color: #111;   /* un gris muy oscuro para diferenciar */
+        padding-left: 0;
+        display: none;            /* ocultos para no hacer la lista kilométrica */
+    }
+    .sub-menu li a {
+        padding: 15px;
+        border-top: 1px solid #222;
+    }
+    /* ajustes del contenido */
+    .destacado {
+        flex-direction: column;   
+        text-align: center;       
+        margin-top: 32px;         
+    }
+    .titulo-pagina {
+        font-size: 36px;          
+    }
+    .subtitulo-pagina {
+        margin: 0 auto 32px;      
+    }
+    .tarjeta {
+        width: 100%;              
+        flex: auto;               
+    }
+    /* slider en móvil */
+    .diapositiva {
+        flex-direction: column;   
+    }
+    .diapositiva-imagen,
+    .diapositiva-contenido {
+        width: 100%;              
+    }
+    .diapositiva-imagen img {
+        height: 250px;            
+    }
+    .diapositiva-contenido {
+        padding: 24px;
+        text-align: center;
+    }
+    .info-superior {
+        flex-direction: column; /* Columna vertical */
+    }
+    .imagen-pequena {
+        width: 100%;      /* Imagen ancho completo en móvil */
+        flex: auto;
+    }
+        .contenedor-formulario {
+        padding: 20px;
+    }
+    .fila-formulario {
+        flex-direction: column;
+    }
+}
+

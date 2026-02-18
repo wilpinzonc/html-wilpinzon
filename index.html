@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Consolas Portátiles - Inicio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="cabecera-sitio">
+    <div class="cabecera-interior ">
+      <div class="logotipo">Consolas<span>Portátiles</span></div> <!-- puse span pa poner dos colores dif-->
+      <nav > <!-- el menu de la derecha arriba con todos los submenus-->
+        <ul class="menu-principal"> <!--ya le puse el color que queria-->
+          <li><a href="index.html">Inicio</a></li>
+          <li class="tiene-submenu">
+            <a href="#">Consolas</a>
+            <ul class="sub-menu">
+              <li><a href="nintendo.html">Nintendo Switch</a></li>
+              <li><a href="ps5.html">PlayStation 5</a></li>
+              <li><a href="rog-ally-x.html">ROG Ally X</a></li>
+              <li><a href="r36s.html">R36S Retro</a></li>
+            </ul>
+          </li>
+          <li class="tiene-submenu">
+            <a href="#">Guías</a>
+            <ul class="sub-menu">
+              <li><a href="comparativas.html">Comparativas</a></li>
+              <li><a href="historia.html">Historia</a></li>
+              <li><a href="accesorios.html">Accesorios</a></li>
+            </ul>
+          </li>
+          <li class="tiene-submenu">
+            <a href="#">Más</a>
+            <ul class="sub-menu">
+              <li><a href="donde-comprar.html">Dónde comprar</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+              <li><a href="HV _ Wilson Pinzon.html">Mi CV (Notion)</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <section class="destacado">
+      <div>
+        <p class="entrada-pagina">Trabajo de clase 2026</p>
+        <h1 class="titulo-pagina">Consolas portátiles: juega donde quieras</h1>
+        <p class="subtitulo-pagina">
+          En esta web repaso algunas consolas portátiles que me parecen interesantes: Nintendo Switch,
+          modelos potentes como la ASUS ROG Ally X y también alguna opción retro como la R36S.
+        </p>
+      </div>
+      <div class="tarjeta">
+        <span class="insignia">Nuevo</span> <!-- puse una insignia para destacar que es nuevo y darle colorinchis-->
+        <h3>¿Por dónde empiezo?</h3>
+        <p>
+          Usa el menú superior para navegar por los modelos más importantes, ver comparativas
+          detalladas o descubrir accesorios imprescindibles para tu consola.
+        </p>
+      </div>
+    </section>
+
+    <section class="slider-section">
+      <h2 class="section-title">Consolas que he elegido</h2>
+      <p class="subtitulo-seccion">
+        He seleccionado unos cuantos modelos para comparar: hay consolas híbridas, opciones centradas
+        en streaming o PC y también una portátil retro para emulación.
+      </p>
+
+      <div class="carrusel"> <!-- css 232 pa cambiar speed -->
+      
+        <div class="diapositivas">
+          <article class="diapositiva">
+            <div class="diapositiva-imagen">
+              <img src="img/slider-switch.jpg" alt="Nintendo Switch en modo portátil">
+            </div>
+            <div class="diapositiva-contenido">
+              <p class="etiqueta-diapositiva">Nintendo</p>
+              <h3 class="titulo-diapositiva">
+                <a href="nintendo.html">Nintendo Switch OLED</a>
+              </h3>
+              <p class="descripcion-diapositiva">
+                Pantalla OLED vibrante y catálogo exclusivo: Mario, Zelda, Pokémon y mucho más.
+                La consola híbrida que definió una generación.
+              </p>
+              <p class="meta-diapositiva">Modo portátil · Dock para TV · Multijugador local</p>
+            </div>
+          </article>
+
+          <article class="diapositiva">
+            <div class="diapositiva-imagen">
+              <img src="img/slider-ps5.jpg" alt="Consola PlayStation 5">
+            </div>
+            <div class="diapositiva-contenido">
+              <p class="etiqueta-diapositiva">PlayStation 5</p>
+              <h3 class="titulo-diapositiva">
+                <a href="ps5.html">PlayStation 5</a>
+              </h3>
+              <p class="descripcion-diapositiva">
+                Potencia de nueva generación con SSD ultrarrápido, trazado de rayos y el mando DualSense
+                con gatillos adaptativos.
+              </p>
+              <p class="meta-diapositiva">Hasta 4K · Ray Tracing · Exclusivos</p>
+            </div>
+          </article>
+
+          <article class="diapositiva">
+            <div class="diapositiva-imagen">
+              <img src="img/slider-rog-ally-x.jpg" alt="ASUS ROG Ally X">
+            </div>
+            <div class="diapositiva-contenido">
+              <p class="etiqueta-diapositiva">PC Gaming</p>
+              <h3 class="titulo-diapositiva">
+                <a href="rog-ally-x.html">ASUS ROG Ally X</a>
+              </h3>
+              <p class="descripcion-diapositiva">
+                Potencia de PC en tus manos con Windows, soporte para Game Pass, Steam,
+                Epic y más.
+              </p>
+              <p class="meta-diapositiva">AMD Ryzen Z1 Extreme · 120 Hz</p>
+            </div>
+          </article>
+
+          <article class="diapositiva">
+            <div class="diapositiva-imagen">
+              <img src="img/slider-r36s.jpg" alt="Consola retro R36S">
+            </div>
+            <div class="diapositiva-contenido">
+              <p class="etiqueta-diapositiva">Retro</p>
+              <h3 class="titulo-diapositiva">
+                <a href="r36s.html">R36S Retro</a>
+              </h3>
+              <p class="descripcion-diapositiva">
+                Revive la época dorada con emulación de consolas clásicas: NES, SNES, Mega Drive,
+                PSX y muchas más.
+              </p>
+              <p class="meta-diapositiva">Emulación · Comunidad de firmware</p>
+            </div>
+          </article>
+
+          <article class="diapositiva">
+            <div class="diapositiva-imagen">
+              <img src="img/slider-accesorios.jpg" alt="Accesorios">
+            </div>
+            <div class="diapositiva-contenido">
+              <p class="etiqueta-diapositiva">Accesorios</p>
+              <h3 class="titulo-diapositiva">
+                <a href="accesorios.html">Accesorios imprescindibles</a>
+              </h3>
+              <p class="descripcion-diapositiva">
+                Fundas rígidas, tarjetas microSD, soportes de carga, grips y auriculares.
+              </p>
+              <p class="meta-diapositiva">Top 10 accesorios</p>
+            </div>
+          </article>
+        </div> </div> </section>
+  </main>
+
+  <footer class="pie-sitio">
+    <div class="contenedor contenido-pie">
+      <p>&copy; 2026 Consolas Portátiles. Proyecto educativo de Lenguaje de Marcas Wilson Pinzon.</p>
+      <p class="enlaces-pie">
+        <a href="sitemap.xml">Sitemap</a>
+        <span>·</span>
+        <a href="contacto.html">Contacto</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
+
+
+

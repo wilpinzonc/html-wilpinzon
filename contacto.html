@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Consolas Portátiles - Contacto y formulario de consulta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-neutral">
+    <header class="cabecera-sitio">
+    <div class="cabecera-interior ">
+      <div class="logotipo">Consolas<span>Portátiles</span></div> <!-- puse span pa poner dos colores dif-->
+      <nav > <!-- el menu de la derecha arriba con todos los submenus-->
+        <ul class="menu-principal"> <!--ya le puse el color que queria-->
+          <li><a href="index.html">Inicio</a></li>
+          <li class="tiene-submenu">
+            <a href="#">Consolas</a>
+            <ul class="sub-menu">
+              <li><a href="nintendo.html">Nintendo Switch</a></li>
+              <li><a href="ps5.html">PlayStation 5</a></li>
+              <li><a href="rog-ally-x.html">ROG Ally X</a></li>
+              <li><a href="r36s.html">R36S Retro</a></li>
+            </ul>
+          </li>
+          <li class="tiene-submenu">
+            <a href="#">Guías</a>
+            <ul class="sub-menu">
+              <li><a href="comparativas.html">Comparativas</a></li>
+              <li><a href="historia.html">Historia</a></li>
+              <li><a href="accesorios.html">Accesorios</a></li>
+            </ul>
+          </li>
+          <li class="tiene-submenu">
+            <a href="#">Más</a>
+            <ul class="sub-menu">
+              <li><a href="donde-comprar.html">Dónde comprar</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+              <li><a href="HV _ Wilson Pinzon.html">Mi CV (Notion)</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <header class="encabezado-pagina">
+      <p class="entrada-pagina">Contacto</p>
+      <h1 class="titulo-pagina">Formulario de consulta sobre consolas portátiles</h1>
+      <p class="subtitulo-pagina">
+        Rellena el siguiente formulario para enviarnos tus dudas sobre qué consola elegir,
+        accesorios recomendados o cualquier otra consulta relacionada con el proyecto.
+      </p>
+    </header>
+
+    <section class="seccion">
+      <div class="contenedor-formulario">
+        <form action="#" method="post">
+          <div class="fila-formulario">
+            <div class="grupo-formulario">
+              <label for="nombre">Nombre</label>
+              <!-- Caja de texto 1 -->
+              <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre">
+            </div>
+            <div class="grupo-formulario">
+              <label for="email">Email</label>
+              <!-- Caja de texto 2 (email) -->
+              <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com">
+            </div>
+          </div>
+
+          <div class="grupo-formulario">
+            <label for="consola-favorita">¿Cuál es tu consola favorita?</label>
+            <!-- Lista select desplegable -->
+            <select id="consola-favorita" name="consola-favorita">
+              <option value="">Selecciona una opción</option>
+              <option value="switch">Nintendo Switch</option>
+              <option value="ps-portal">PlayStation Portal</option>
+              <option value="rog-ally-x">ASUS ROG Ally X</option>
+              <option value="r36s">R36S Retro</option>
+              <option value="otra">Otra portátil</option>
+            </select>
+          </div>
+
+          <div class="grupo-formulario">
+            <label for="mensaje">Mensaje</label>
+            <!-- Área de texto -->
+            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos qué tipo de jugador eres, qué presupuesto tienes y en qué situaciones vas a jugar."></textarea>
+          </div>
+
+          <div class="grupo-formulario-inline">
+            <p class="etiqueta-formulario-inline">Intereses (checkbox)</p>
+            <!-- 3 Checkboxes -->
+            <div class="grupo-checkbox">
+              <label class="item-checkbox">
+                <input type="checkbox" name="intereses" value="ofertas">
+                <span>Ofertas</span>
+              </label>
+              <label class="item-checkbox">
+                <input type="checkbox" name="intereses" value="noticias">
+                <span>Noticias</span>
+              </label>
+              <label class="item-checkbox">
+                <input type="checkbox" name="intereses" value="eventos">
+                <span>Eventos</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="grupo-formulario-inline">
+            <p class="etiqueta-formulario-inline">Nivel gamer (radiobutton)</p>
+            <!-- 3 Radiobuttons -->
+            <div class="grupo-radio">
+              <label class="item-radio">
+                <input type="radio" name="nivel-gamer" value="casual">
+                <span>Casual</span>
+              </label>
+              <label class="item-radio">
+                <input type="radio" name="nivel-gamer" value="pro">
+                <span>Pro</span>
+              </label>
+              <label class="item-radio">
+                <input type="radio" name="nivel-gamer" value="hardcore">
+                <span>Hardcore</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="acciones-formulario">
+            <!-- Botón submit -->
+            <button type="submit" class="boton boton-primario">Enviar</button>
+            <!-- Botón reset -->
+            <button type="reset" class="boton boton-secundario">Borrar</button>
+          </div>
+        </form>
+      </div>
+
+      <p style="margin-top:24px;font-size:0.9rem;color:lightsteelblue;">
+        Si quieres ver más trabajos y mi currículum completo, también tengo una página de Notion:
+        <a href="HV _ Wilson Pinzon.html" style="color:cyan;">abrir mi CV en Notion</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer class="pie-sitio">
+    <div class="contenedor contenido-pie">
+      <p>&copy; 2026 Consolas Portátiles. Proyecto educativo de Lenguaje de Marcas.</p>
+      <p class="enlaces-pie">
+        <a href="sitemap.xml">Sitemap</a>
+        <span>·</span>
+        <a href="contacto.html">Contacto</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
+
