@@ -848,7 +848,7 @@ gracias por tu tiempo y espero que te guste el trabajo, saludos.
     }
     /* submenús en móvil: que no floten, que se queden fijos en la lista */
     .sub-menu {
-        position: static;         /* quita el "flotar" */
+        position: static;         /* quita el flotar */
         width: 100%;
         border: none;
         background-color: #111;   /* un gris muy oscuro para diferenciar */
@@ -928,6 +928,7 @@ pense ponerlo en el menu del index pero siento que distrae mucho
   );
   background-size: 400%;
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   animation: rgb 5s linear infinite;
 }
@@ -936,3 +937,49 @@ pense ponerlo en el menu del index pero siento que distrae mucho
   0% { background-position: 0%; }
   100% { background-position: 400%; }
 }
+
+/*=====================================================
+/*========FIN DE PRUEBA PARA COLOR RAINBOW==========*/
+
+/*=====================================================*/
+/* EDICIONES PARA LA TABLA COMPARATIVA DE LA PAGINA DE GUIAS */
+.contenedor-tabla {
+    overflow-x: auto; /* Permite scroll si la pantalla es pequeña */
+    border-radius: 12px;
+    border: 2px solid #001a4d;
+    background-color: rgba(15, 23, 42, 0.9);
+    margin-top: 32px;
+}
+
+.tabla-comparativa {
+    width: 100%;
+    border-collapse: separate; /* Cambiado para permitir border-radius */
+    border-spacing: 0;
+    color: #e2e8f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tabla-comparativa th {
+    background-color: #1e293b;
+    color: #38bdf8; /* Un azul neón para el encabezado */
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    padding: 16px;
+    text-align: left;
+    border-bottom: 2px solid #001a4d;
+}
+
+.tabla-comparativa td {
+    padding: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Efecto hover para que resalte al pasar el ratón */
+.tabla-comparativa tbody tr:hover {
+    background-color: rgba(56, 189, 248, 0.05);
+    transition: background 0.3s ease;
+}
+
