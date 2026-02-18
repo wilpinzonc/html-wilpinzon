@@ -84,7 +84,7 @@ img {
 }
 
 .menu-principal > li > a {
-    color: rgb(79, 134, 207);        /* pa las letras del menu color gris azulado */
+    color: #0af7ff;        /* pa las letras del menu color gris azulado */
     font-size: 20px;              
     padding: 8px;                 /* zona de clic */
     transition: color 0.4s;       /* efectito suave de color */
