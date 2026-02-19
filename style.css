@@ -905,6 +905,93 @@ gracias por tu tiempo y espero que te guste el trabajo, saludos.
     }
 }
 
+/* ==================ESTILOS PARA CV (HV WILSON PINZON)=============================== */
+.cv-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    margin-top: 64px;
+    margin-bottom: 40px;
+}
+
+.cv-titulo {
+    flex: 1;
+    text-align: left;
+}
+
+.cv-contacto {
+    flex: 0 0 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cv-contacto-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    background-color: rgba(15, 23, 42, 0.85);
+    font-size: 0.9rem;
+    color: lightsteelblue;
+}
+
+.cv-contacto-item:hover {
+    border-color: cyan;
+    color: white;
+}
+
+.cv-icono {
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: cyan;
+    color: black;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.cv-grid-perfil {
+    align-items: stretch;
+}
+
+.cv-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.cv-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+/* ========== MEDIA QUERY EXTRA PARA CV ≤600PX ======================================= */
+@media (max-width: 600px) {
+    .cv-encabezado {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .cv-contacto {
+        width: 100%;
+        flex: auto;
+    }
+
+    .cv-grid-3,
+    .cv-grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
 /*==================================================
 /*========ZONA DE PRUEBA PARA COLOR RAINBOW======*/
 /*==================================================*/
@@ -982,9 +1069,9 @@ pense ponerlo en el menu del index pero siento que distrae mucho
     background-color: rgba(56, 189, 248, 0.05);
     transition: background 0.3s ease;
 }
-}
 
-/* ==================MEJORAS PAGINA HISTORIA (LINEA DE TIEMPO)========================== */
+
+/* ==================mejoras pa la linea de tiempo========================== */
 .seccion-linea-tiempo {
     margin-top: 56px;
     margin-bottom: 64px;
@@ -1068,7 +1155,7 @@ pense ponerlo en el menu del index pero siento que distrae mucho
     }
 }
 
-/* ==================MEJORAS PAGINA ACCESORIOS (GRID)=================================== */
+/* ==================la grid de los accesorios=================================== */
 .rejilla-accesorios {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -1105,11 +1192,11 @@ pense ponerlo en el menu del index pero siento que distrae mucho
     border-color: cyan;
 }
 
-/* ==================SECCION DONDE COMPRAR (GRID / FLEX)================================ */
+/* ==================lo de donde comprar se acomoda aqui ================================ */
 .lista-tiendas {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /*preguntar luego por esto*/
     gap: 24px;
     padding: 0;
     margin-top: 32px;
@@ -1137,22 +1224,8 @@ pense ponerlo en el menu del index pero siento que distrae mucho
     word-break: break-word; /* evita desbordes con URLs largas */
 }
 
-/* ==================AJUSTES RESPONSIVE EXTRA=========================================== */
-@media (max-width: 900px) {
-    .linea-tiempo {
-        padding-left: 22px;
-    }
-
-    .elemento-linea-tiempo {
-        flex-direction: column;
-        align-items: flex-start;
-        padding-left: 30px;
-    }
-
-    .anio-linea-tiempo {
-        margin-bottom: 6px;
-    }
-}
+/* ==================los cambios que me faltaron del responsive, arregla
+lo de nintendo que estaba roto y no se podia ver=========================================== */
 
 @media (max-width: 600px) {
     .rejilla-accesorios {
@@ -1178,3 +1251,4 @@ pense ponerlo en el menu del index pero siento que distrae mucho
     .punto-linea-tiempo {
         left: -3px;
     }
+}
