@@ -982,4 +982,199 @@ pense ponerlo en el menu del index pero siento que distrae mucho
     background-color: rgba(56, 189, 248, 0.05);
     transition: background 0.3s ease;
 }
+}
 
+/* ==================MEJORAS PAGINA HISTORIA (LINEA DE TIEMPO)========================== */
+.seccion-linea-tiempo {
+    margin-top: 56px;
+    margin-bottom: 64px;
+}
+
+.linea-tiempo {
+    position: relative;
+    margin: 40px auto 0;
+    max-width: 900px;
+    padding-left: 28px; /* espacio para la linea y el punto */
+}
+
+.linea-tiempo::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, cyan, #38bdf8, #0ea5e9);
+    opacity: 0.5;
+}
+
+.elemento-linea-tiempo {
+    position: relative;
+    padding-left: 32px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.punto-linea-tiempo {
+    position: absolute;
+    left: -2px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 3px solid cyan;
+    background-color: #020617;
+    box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.25);
+}
+
+.anio-linea-tiempo {
+    min-width: 70px;
+    font-weight: 700;
+    color: cyan;
+    font-size: 0.95rem;
+    margin-top: 2px;
+}
+
+.tarjeta-linea-tiempo {
+    flex: 1;
+    background-color: rgba(15, 23, 42, 0.9);
+    border-radius: 12px;
+    padding: 16px 18px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.6);
+    transform: translateX(0);
+    animation: slideInTimeline 0.7s ease both;
+}
+
+.tarjeta-linea-tiempo h3 {
+    margin-bottom: 8px;
+}
+
+.tarjeta-linea-tiempo p {
+    color: lightsteelblue;
+    font-size: 0.95rem;
+}
+
+@keyframes slideInTimeline {
+    from {
+        opacity: 0;
+        transform: translateX(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ==================MEJORAS PAGINA ACCESORIOS (GRID)=================================== */
+.rejilla-accesorios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.tarjeta-accesorio,
+.accessory-card {
+    background-color: rgba(15, 23, 42, 0.9);
+    border-radius: 16px;
+    padding: 22px 20px;
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.7);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.tarjeta-accesorio h3,
+.accessory-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+}
+
+.tarjeta-accesorio p,
+.accessory-card p {
+    color: lightsteelblue;
+    font-size: 0.95rem;
+}
+
+.tarjeta-accesorio:hover,
+.accessory-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(15, 23, 42, 0.9);
+    border-color: cyan;
+}
+
+/* ==================SECCION DONDE COMPRAR (GRID / FLEX)================================ */
+.lista-tiendas {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    padding: 0;
+    margin-top: 32px;
+}
+
+.item-tienda,
+.store-item {
+    background-color: rgba(15, 23, 42, 0.9);
+    border-radius: 14px;
+    padding: 20px 18px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.65);
+}
+
+.item-tienda h3,
+.store-item h3 {
+    margin-bottom: 8px;
+    font-size: 1.02rem;
+}
+
+.item-tienda a,
+.store-item a {
+    color: cyan;
+    font-size: 0.95rem;
+    word-break: break-word; /* evita desbordes con URLs largas */
+}
+
+/* ==================AJUSTES RESPONSIVE EXTRA=========================================== */
+@media (max-width: 900px) {
+    .linea-tiempo {
+        padding-left: 22px;
+    }
+
+    .elemento-linea-tiempo {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 30px;
+    }
+
+    .anio-linea-tiempo {
+        margin-bottom: 6px;
+    }
+}
+
+@media (max-width: 600px) {
+    .rejilla-accesorios {
+        grid-template-columns: 1fr;
+    }
+
+    .lista-tiendas {
+        grid-template-columns: 1fr;
+    }
+
+    .seccion-rejilla-3-nintendo,
+    .seccion-rejilla-2-nintendo,
+    .seccion-rejilla-2-ps5,
+    .rejilla-2,
+    .grid-2 {
+        grid-template-columns: 1fr; /* todas las rejillas en columna en pantallas medianas y pequeñas */
+    }
+
+    .linea-tiempo::before {
+        left: 10px;
+    }
+
+    .punto-linea-tiempo {
+        left: -3px;
+    }
