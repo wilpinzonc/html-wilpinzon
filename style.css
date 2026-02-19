@@ -1252,3 +1252,22 @@ lo de nintendo que estaba roto y no se podia ver================================
         left: -3px;
     }
 }
+
+
+/*===================== aca pondre el hover para los cuadros del cv ================================*/
+
+/* seteo el tiempo de nimacion*/
+.cv-grid-perfil .tarjeta,
+.cv-grid-3 .tarjeta,
+.cv-grid-2 .tarjeta {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* pongo el hover*/
+.cv-grid-perfil .tarjeta:hover,
+.cv-grid-3 .tarjeta:hover,
+.cv-grid-2 .tarjeta:hover {
+    transform: translateY(-6px); /* lo de levantar la tarjeta */
+    box-shadow: 0 16px 35px rgba(15, 23, 42, 0.9); /* Sla sombrita*/
+    border-color: white; /* las tarjetsa tienen borde cyan, al pasar el ratón cambiará a blanco para que resalte */
+}
