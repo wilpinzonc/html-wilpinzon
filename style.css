@@ -1271,3 +1271,121 @@ lo de nintendo que estaba roto y no se podia ver================================
     box-shadow: 0 16px 35px rgba(15, 23, 42, 0.9); /* Sla sombrita*/
     border-color: white; /* las tarjetsa tienen borde cyan, al pasar el ratón cambiará a blanco para que resalte */
 }
+
+/*===================prueba de la animacion de mario*=======================/
+/* Contenedor que ocupa todo el ancho pero no deja ver el desborde */
+.pie-sitio {
+    position: relative; 
+    overflow: hidden; /* pa que Mario no "se salga" de la web */
+}
+
+.mario-container {
+    position: absolute;
+    bottom: 40px; /* Ajusta esto para que parezca que pisa la línea del footer */
+    left: -100px; /* Empieza fuera de la pantalla */
+    width: 80px;
+    z-index: 10;
+    animation: mario-correr 10s linear infinite;
+}
+
+.mario-sprite {
+    width: 100%;
+    height: auto;
+}
+
+/* Ajustamos lanimación: va de -100px a el 100% del ancho + 100px extra */
+@keyframes mario-correr {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(100vw + 200px));
+    }
+}
+
+
+
+/*quize agregar uno mas pero corriendo pal otro lado*/
+.mario-reves {
+    left: auto;        /* Anulamos el left: -100px del original */
+    right: -100px;     /* Empezamos desde la derecha de la pantalla */
+    animation: mario-correr-derecha-izq 12s linear infinite; /* Un poco más lento para variar */
+}
+
+/* volteamos la imagen horizontalmente */
+.mario-reves .mario-sprite {
+    transform: scaleX(-1);
+}
+
+/* animación pa correr de derecha a izquierda */
+@keyframes mario-correr-derecha-izq {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100vw - 200px));
+    }
+}
+
+/*===prueba de astro bailando====*/
+
+/* estilo compartido para ambos Astros en PS5 */
+.tema-ps5 .astro-dance-container {
+    position: fixed;
+    bottom: 30px;
+    width: 180px; /*aca puedo cambiar el tamanino*/
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+}
+
+/* pa ponerlos a un lado y a otro */
+.tema-ps5 .astro-derecha {
+    right: 30px;
+}
+
+.tema-ps5 .astro-izquierda {
+    left: 30px;
+}
+
+.astro-gif {
+    width: 100%;
+    height: auto;
+    animation: astro-float 3s ease-in-out infinite;
+}
+
+/*  el de la izquierda baila con un pequeño retraso */
+.tema-ps5 .astro-izquierda .astro-gif,
+.tema-ps5 .astro-izquierda .plataforma-astro {
+    animation-delay: 0.5s; /* Esto hace que no se muevan exactamente igual, queda más natural */
+}
+
+/* brillo/sombra */
+.tema-ps5 .plataforma-astro {
+    width: 110px;
+    height: 15px;
+    background: radial-gradient(ellipse at center, rgba(0, 112, 222, 0.6) 0%, rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    margin-top: -15px;
+    animation: shadow-pulse 3s ease-in-out infinite;
+}
+
+/* las animaciones*/
+@keyframes astro-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+}
+
+@keyframes shadow-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(0.7); opacity: 0.2; }
+}
+
+/* pa ocultar ambos en móvil para no tapar el texto central */
+@media (max-width: 600px) {
+    .astro-dance-container {
+        display: none;
+    }
+}
